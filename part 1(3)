@@ -1,0 +1,25 @@
+USE JAGA;
+
+CREATE TABLE STUDENT (/* creating the table*/
+ID INT PRIMARY KEY,
+NAME VARCHAR(30),
+CGPA DECIMAL(3,2)
+);
+
+DESCRIBE STUDENT;/* viewing the table */
+
+DROP TABLE STUDENT;/*deleting the table, it show error if table not exists*/
+DROP TABLE IF EXISTS STUDENT;/*deleting the table, it show warining if table not exists*/
+
+ALTER TABLE STUDENT ADD COLUMN DEPARTMENT VARCHAR(10);/*adding one extra column in the table*/
+ALTER TABLE STUDENT ADD COLUMN AGE INT;/*adding oneextra column in the table*/
+
+ALTER TABLE STUDENT DROP COLUMN AGE;/*deleting particular column in the table*/
+
+INSERT INTO STUDENT VALUES(1,"jagadeesh",9.5,"ece");/*adding values to the table*/
+INSERT INTO STUDENT VALUES(2,"jagadeesh",9.0,"ece"),(3,"haritha",8.5,"it"),(4,"anitha",7.0,"eee");/*adding multiple values to the table*/
+INSERT INTO STUDENT(ID,NAME) VALUES(5,"nandhu");/*adding particular values to the table*//*note we need to add primary key compelsary*/
+
+
+SELECT * FROM STUDENT;/*viewing the data*/
+SELECT ID,NAME FROM STUDENT;/*viewing particular data*/

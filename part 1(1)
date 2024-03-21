@@ -1,0 +1,6 @@
+CREATE DATABASE JAGA;/*creates database*/
+
+DROP DATABASE JAGA;/*delete the database, it show error if database not exists*/
+DROP SCHEMA JAGA;/*alternate option*/
+DROP DATABASE IF EXISTS JAGA;/*it show warning if database not exists*/
+DROP SCHEMA IF EXISTS JAGA;/*alternate option*/

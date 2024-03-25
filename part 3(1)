@@ -1,0 +1,72 @@
+USE JAGA;
+
+CREATE TABLE DETAILS(
+ID INT PRIMARY KEY,
+NAME VARCHAR(20),
+JOB_DESCRIPTION VARCHAR(30),
+SALARY FLOAT
+);
+
+
+INSERT INTO DETAILS VALUES
+(1, "JAGADEESH", "TL", 90000),
+(2, "John Doe", "WORKER", 80000),
+(3, "Jane Smith", "HR MANAGER", 75000),
+(4, "Michael Johnson", "TL", 95000),
+(5, "Emily Brown", "WORKER", 85000),
+(6, "David Wilson", "TL", 82000),
+(7, "Sarah Lee", "WORKER", 78000),
+(8, "Daniel Martinez", "TL", 83000),
+(9, "Jessica Taylor", "HR MANAGER", 90000),
+(10, "Christopher Anderson", "WORKER", 84000),
+(11, "Amanda Rodriguez", "TL", 76000),
+(12, "Matthew Thomas", "HR MANAGER", 87000),
+(13, "Jennifer White", "WORKER", 72000),
+(14, "Joshua Hall", "TL", 80000),
+(15, "Ashley Garcia", "WORKER", 73000),
+(16, "William Clark", "TL", 88000),
+(17, "Linda Perez", "HR MANAGER", 92000),
+(18, "James Martinez", "WORKER", 91000),
+(19, "Michelle Hernandez", "TL", 70000),
+(20, "Ryan Young", "WORKER", 78000);
+
+SELECT DISTINCT JOB_DESCRIPTION FROM DETAILS;/*unique values */
+
+SELECT * FROM DETAILS
+ORDER BY NAME ;/*acsending order*/
+
+SELECT * FROM DETAILS
+ORDER BY NAME DESC;/*descinding order*/
+
+SELECT * FROM DETAILS
+ORDER BY SALARY,NAME; /* using double sorting where first preference goes to first and then others here salary then name*/
+
+SELECT * FROM DETAILS /* custom */
+ORDER BY (CASE NAME 
+WHEN 'JAGADEESH' THEN 1
+WHEN 'Michelle Hernandez' THEN 2
+ELSE 100000 END
+);
+
+SELECT * FROM DETAILS /* custom and inbuilt*/
+ORDER BY (CASE NAME 
+WHEN 'JAGADEESH' THEN 1
+WHEN 'Michelle Hernandez' THEN 2
+ELSE 100000 END
+), NAME;
+
+
+/* we can also use the where filter in betweent the select and order by
+like this*/
+
+SELECT * FROM DETAILS
+WHERE ID>10
+ORDER BY SALARY,NAME;
+
+SELECT * FROM DETAILS /* custom */
+WHERE ID>10
+ORDER BY (CASE NAME 
+WHEN 'JAGADEESH' THEN 1
+WHEN 'Michelle Hernandez' THEN 2
+ELSE 100000 END
+);

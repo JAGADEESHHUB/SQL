@@ -1,0 +1,67 @@
+USE JAGA;
+
+CREATE TABLE DETAILS(
+ID INT PRIMARY KEY,
+NAME VARCHAR(20),
+JOB_DESCRIPTION VARCHAR(30),
+SALARY FLOAT
+);
+
+
+INSERT INTO DETAILS VALUES
+(1, "JAGADEESH", "TL", 90000),
+(2, "John Doe", "WORKER", 80000),
+(3, "Jane Smith", "HR MANAGER", 75000),
+(4, "Michael Johnson", "TL", 95000),
+(5, "Emily Brown", "WORKER", 85000),
+(6, "David Wilson", "TL", 82000),
+(7, "Sarah Lee", "WORKER", 78000),
+(8, "Daniel Martinez", "TL", 83000),
+(9, "Jessica Taylor", "HR MANAGER", 90000),
+(10, "Christopher Anderson", "WORKER", 84000),
+(11, "Amanda Rodriguez", "TL", 76000),
+(12, "Matthew Thomas", "HR MANAGER", 87000),
+(13, "Jennifer White", "WORKER", 72000),
+(14, "Joshua Hall", "TL", 80000),
+(15, "Ashley Garcia", "WORKER", 73000),
+(16, "William Clark", "TL", 88000),
+(17, "Linda Perez", "HR MANAGER", 92000),
+(18, "James Martinez", "WORKER", 91000),
+(19, "Michelle Hernandez", "TL", 70000),
+(20, "Ryan Young", "WORKER", 78000);
+
+-- math numeric functions
+SELECT COUNT(NAME) namecount FROM DETAILS;
+
+SELECT AVG(SALARY) averagesalary FROM DETAILS
+WHERE SALARY>70000;
+
+SELECT AVG(SALARY) averagesalary_of_jagadeesh FROM DETAILS
+WHERE SALARY>70000 AND NAME="JAGADEESH";
+
+SELECT SUM(SALARY) totalsalary_of_all_HR FROM DETAILS
+WHERE JOB_DESCRIPTION="HR MANAGER";
+
+SELECT MAX(SALARY) FROM DETAILS
+WHERE JOB_DESCRIPTION="WORKER";
+
+SELECT MIN(SALARY) FROM DETAILS
+WHERE JOB_DESCRIPTION="WORKERS";
+
+-- string functions
+
+SELECT LOWER(NAME) names FROM DETAILS;
+SELECT UPPER(NAME) names, FORMAT(SALARY,0) FROM DETAILS;
+
+SELECT LENGTH(NAME) jagadeesh_name_length FROM DETAILS
+WHERE NAME="JAGADEESH";
+
+SELECT NAME name, LENGTH(NAME) length_of_name FROM DETAILS;
+
+SELECT CONCAT('NAME : ',NAME) FROM DETAILS;
+
+SELECT CONCAT('NAME : ',UPPER(NAME)) FROM DETAILS;
+
+SELECT LEFT(NAME,3) FROM DETAILS;
+
+SELECT LEFT(NAME,3) first_3_letters ,LENGTH(LEFT(NAME,3)) count_of_first_3letters FROM DETAILS;
